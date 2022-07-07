@@ -6,6 +6,7 @@ This is building a container from scratch
 ### Build image
 *(If you want to develop yourself)* 
 docker build --tag=hello-duke-cli-210 .
+docker build --tag=hello .
 
 ### List docker images
 docker image ls
@@ -13,11 +14,20 @@ docker image ls
 ### Run my newly built container
 
 docker run -it hello-duke-cli-210 python app.py --name "Big John"
+docker run -it hello python app.py --name "Manjima Sarkar"
 
 ### Push to Docker Hub
 
 *Note:  You will need to change for your Docker Hub Repo*
 docker push noahgift/duke102:tagname
+docker push mnjima24/firstrepo:hello
+
+ docker tag hello manjima24:latest
+
+docker push manjima24/hello:latest
+
+docker tag hello:latest manjima24/hello7:latest
+docker push manjima24/hello7:latest
 
 ## Run it yourself
 
@@ -31,7 +41,8 @@ docker run -it noahgift/cloudapp bash
 ## Pass in a command
 
 ```bash
-docker run -it noahgift/cloudapp python app.py --name "Big John"
+docker run -it manjima24/container-from-scratch python app.py --name "Big John"
+docker run -it manjima24/hello7 python app.py --name "Big John"
 #the output
 Hello Big John!
 ```
